@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            /* background-color: blue; */
+            
+        }
+
+        .sp {
+            /* display: flex; */
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(189, 136, 219, 0.274);
+            text-align: center;
+            /* padding-top: 40px; */
+            color: wheat;
+
+        }
+
+        /* .box { */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* color: wheat; */
+        /* } */
+
+        .imgs {
+            width: 180px;
+            height: 180px;
+        }
+
+        .fff {
+            display: flex;
+        }
+    </style>
+    <title>Game</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Tic Tac Game</h1>
+    <div class="box">
+        <div class="box1 fff">
+            <div class="sp" onclick="myfun(0)">0</div>
+            <div class="sp" onclick="myfun(1)">1</div>
+            <div class="sp" onclick="myfun(2)">2</div><br>
+        </div>
+        <div class="box2 fff">
+            <div class="sp" onclick="myfun(3)">3</div>
+            <div class="sp" onclick="myfun(4)">4</div>
+            <div class="sp" onclick="myfun(5)">5</div><br>
+        </div>
+        <div class="box3 fff">
+            <div class="sp" onclick="myfun(6)">6</div>
+            <div class="sp" onclick="myfun(7)">7</div>
+            <div class="sp" onclick="myfun(8)">8</div>
+        </div>
+    </div>
+    <p>Winner is ::: <span id="result">Before Ans</span></p>
+    <p>Now Turn is ::: <span id="ppp">0</span></p>
+    <script>
+        var cnt = 0;
+        var array = [];
+        var z = 0;
+        function myfun(par) {
+
+            if (cnt % 2 == 1) {
+                var a = document.getElementsByClassName("sp")[par];
+                a.innerHTML = "<img src=\'x1.png\' width=\'180px\' height=\'180px\'>";
+                var PPP = document.getElementById("ppp");
+                PPP.innerText = "0";
+                for (var z = cnt; z <= cnt; z++) {
+                    array[par] = "X";
+                    console.log(array);
+                }
+
+                if (array[0] == "X" && array[1] == "X" && array[2] == "X" || array[3] == "X" && array[4] == "X" && array[5] == "X" || array[6] == "X" && array[7] == "X" && array[8] == "X" || array[0] == "X" && array[3] == "X" && array[6] == "X" || array[1] == "X" && array[4] == "X" && array[7] == "X" || array[2] == "X" && array[5] == "X" && array[8] == "X" || array[0] == "X" && array[4] == "X" && array[8] == "X" || array[2] == "X" && array[4] == "X" && array[6] == "X") {
+                    var result = document.getElementById("result");
+                    result.innerText = "X";
+                }
+                cnt++;
+            } else {
+                var a = document.getElementsByClassName("sp")[par];
+                a.innerHTML = "<img src=\'o1.png\' width=\'180px\' height=\'180px\'>";
+                var PPP = document.getElementById("ppp");
+                PPP.innerText = "X";
+                for (var z = cnt; z <= cnt; z++) {
+                    array[par] = "0";
+                    console.log(array);
+                }
+
+                if (array[0] == "0" && array[1] == "0" && array[2] == "0" || array[3] == "0" && array[4] == "0" && array[5] == "0" || array[6] == "0" && array[7] == "0" && array[8] == "0" || array[0] == "0" && array[3] == "0" && array[6] == "0" || array[1] == "0" && array[4] == "0" && array[7] == "0" || array[2] == "0" && array[5] == "0" && array[8] == "0" || array[0] == "0" && array[4] == "0" && array[8] == "0" || array[2] == "0" && array[4] == "0" && array[6] == "0") {
+                    var result = document.getElementById("result");
+                    result.innerText = "0";
+                }
+                cnt++;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
